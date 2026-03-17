@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-api
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: task-api
+
+  template:
+    metadata:
+      labels:
+        app: task-api
+
+    spec:
+      containers:
+      - name: task-api
+        image: go-task-api-api:latest
+        imagePullPolicy: Never
+
+        ports:
+        - containerPort: 8080
+
+        env:
+        - name: DB_HOST
+          value: mysql
+
+        - name: DB_PORT
+          value: "3306"
+
+        - name: DB_USER
+          value: root
+
+        - name: DB_PASSWORD
+          value: root123
+
+        - name: DB_NAME
+          value: taskdb
