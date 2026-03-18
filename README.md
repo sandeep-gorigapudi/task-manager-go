@@ -33,6 +33,16 @@ cmd/server → Entry point
 internal/ → Core application logic
 k8s/ → Kubernetes configs
 
+## 🔹 Database
+
+```markdown
+## 🗄 Database
+
+- MySQL used for persistence
+- Indexed fields for faster lookup
+- Tables:
+  - tasks (id, title, status)
+
 ## 🐳 Run with Docker
 
 ```bash
@@ -52,7 +62,7 @@ docker-compose up --build
 
 POST /task
 
-```json
+json
 {
   "title": "Learn Go",
   "status": "pending"
@@ -83,16 +93,6 @@ http://localhost:8080
 
 
 ---
-
-## 🔹 Database
-
-```markdown
-## 🗄 Database
-
-- MySQL used for persistence
-- Indexed fields for faster lookup
-- Tables:
-  - tasks (id, title, status)
 
 ## 🎯 Purpose
 
