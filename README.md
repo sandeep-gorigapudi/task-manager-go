@@ -45,3 +45,59 @@ docker-compose up --build
 | GET    | /tasks    | Get all tasks |
 | PUT    | /task/:id | Update task   |
 | DELETE | /task/:id | Delete task   |
+
+## 📬 Sample Request
+
+### Create Task
+
+POST /task
+
+```json
+{
+  "title": "Learn Go",
+  "status": "pending"
+}
+Response
+{
+  "id": 1,
+  "title": "Learn Go",
+  "status": "pending"
+}
+
+
+---
+
+## 🔹 Run Instructions
+
+```markdown
+## ▶️ How to Run
+
+1. Clone the repo
+2. Run:
+
+```bash
+docker-compose up --build
+
+Server runs on:
+http://localhost:8080
+
+
+---
+
+## 🔹 Database
+
+```markdown
+## 🗄 Database
+
+- MySQL used for persistence
+- Indexed fields for faster lookup
+- Tables:
+  - tasks (id, title, status)
+
+## 🎯 Purpose
+
+This project demonstrates:
+- REST API design
+- Layered architecture (handler → service → repo)
+- Database optimization basics
+- Containerized deployment using Docker
