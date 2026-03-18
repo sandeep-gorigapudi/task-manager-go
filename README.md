@@ -16,7 +16,6 @@ A backend REST API for managing tasks, built using Go (Gin), MySQL, and Docker.
 ## 🧱 Architecture
 Client → Gin Router → Handler → Service → Repository → MySQL
 
-
 ---
 
 ## 🛠 Tech Stack
@@ -29,75 +28,50 @@ Client → Gin Router → Handler → Service → Repository → MySQL
 ---
 
 ## 📂 Project Structure
-cmd/server → Entry point
-internal/ → Core application logic
-k8s/ → Kubernetes configs
+- `cmd/server` → Entry point  
+- `internal/` → Core application logic  
+- `k8s/` → Kubernetes configs  
 
-## 🔹 Database
+---
 
-```markdown
 ## 🗄 Database
-
-- MySQL used for persistence
-- Indexed fields for faster lookup
+- MySQL used for persistence  
+- Indexed fields for faster lookup  
 - Tables:
-  - tasks (id, title, status)
+  - `tasks (id, title, status)`
+
+---
 
 ## 🐳 Run with Docker
 
 ```bash
 docker-compose up --build
 
-
-| Method | Endpoint  | Description   |
-| ------ | --------- | ------------- |
-| POST   | /task     | Create task   |
-| GET    | /tasks    | Get all tasks |
-| PUT    | /task/:id | Update task   |
-| DELETE | /task/:id | Delete task   |
-
 ## 📬 Sample Request
-
-### Create Task
-
+Create Task
 POST /task
-
-json
 {
   "title": "Learn Go",
   "status": "pending"
 }
-Response
 {
   "id": 1,
   "title": "Learn Go",
   "status": "pending"
 }
 
-
----
-
-## 🔹 Run Instructions
-
-```markdown
-## ▶️ How to Run
-
-1. Clone the repo
-2. Run:
-
-```bash
+▶️ How to Run (Manual)
+Clone the repo
+Run:
 docker-compose up --build
-
-Server runs on:
+Open:
 http://localhost:8080
 
 
----
-
-## 🎯 Purpose
+🎯 Purpose
 
 This project demonstrates:
-- REST API design
-- Layered architecture (handler → service → repo)
-- Database optimization basics
-- Containerized deployment using Docker
+REST API design
+Layered architecture (handler → service → repository)
+Database optimization basics
+Containerized deployment using Docker
